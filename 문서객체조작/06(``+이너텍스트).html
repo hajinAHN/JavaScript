@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+
+        body{
+            padding: 50px;
+        }
+        .container{
+            margin-top: 40px;
+        }
+        button{
+            padding: 5px 15px; 
+
+        }
+        .ball{
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            top: 200px; left: 200px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+        }
+        .on{
+            transform: scale(3);
+        }
+        .box{
+            margin-top:100px; 
+            background-color : blueviolet;
+            color: #fff;
+        }
+    </style>
+    <script>
+        'use strict';
+       window.addEventListener('load',function(){
+            const newNode = document.createElement('div'); //div태그 생성(미리스타일선언)
+            //newNode.classList.add('box'); //속성값 적용
+            newNode.setAttribute('class','box') //태그의 속성값 설정
+            //newNode.getAttribute('class','box') //newNode으 속성값 갖고 오기
+            newNode.innerText = 'waiting event!!'//새로 생성된 태그내에 글자 내용 추가
+
+            //추가된 태그에 추가할 위치를 설정
+            const body = document.body;
+            body.appendChild(newNode); //새로생성된 태그를 body에 추가 자식요소중에 마지막에 
+
+           const ball = document.querySelector('.ball');
+        
+          ball.addEventListener('mouseover',function(){
+            newNode.innerText = 'mouseover event!!!';
+          });
+
+          ball.addEventListener('mouseout',function(){
+            newNode.innerText = 'mouseout event!!!';
+          });
+
+       });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

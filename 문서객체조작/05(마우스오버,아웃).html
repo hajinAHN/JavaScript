@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{margin:0; padding:0}
+      body{padding:50px;}
+      .container{margin-top: 40px;}
+      button{padding:5px 15px}
+      .ball{width:30px; height:30px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            top:200px; left:200px;
+            cursor:pointer;
+            transition: all 0.5s ease-in-out;}
+      .on{ transform: scale(3);}
+    </style>
+    <script>
+        'use strict';
+        window.addEventListener('load',function() {
+            const ball = document.querySelector('.ball');
+            
+            ball.addEventListener('mouseover',function(e) {
+                e.target.classList.add('on');     
+            });
+
+            ball.addEventListener('mouseout',function(e) {
+                e.target.classList.remove('on');     
+            });
+            
+        })
+    
+       //자바스크립트 애니메이션 스타일을 사용해서 함 -> 반드시  transition 적용이 되었야 함
+       //classList.add('클래스명') -> 클래스 적용
+       //classList.remove('클래스명') -> 클래스 미적용
+       //classList.toggle('클래스명') -> 현재 클래스 적용 상태의 반대 상태를 적용
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
