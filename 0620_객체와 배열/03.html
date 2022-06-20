@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const object = {
+            name:'안하진',
+            age:20,
+            color: 'violet'
+      }
+   
+      //var curren = $('.btn');
+      const {name,age} = object;
+      console.log('# 속성 이름 그대로 꺼내서 출력하기');
+      console.log(name,age);
+
+      const {a=name,b=age} = object;
+      console.log('# 속성 이름 그대로 꺼내서 출력하기');
+      console.log(a, b);
+
+    </script>
+</body>
+</html>
